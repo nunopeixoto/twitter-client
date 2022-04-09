@@ -6,6 +6,7 @@ import { User } from '../../models/user.model';
 import {FeedService} from '../../services/feed.service';
 import {FollowService} from '../../services/follow.service';
 import {Router} from '@angular/router';
+import { TweetService } from '../../services/tweet.service';
 
 @Component({
   selector: 'app-feed',
@@ -20,6 +21,7 @@ export class FeedComponent implements OnInit {
     private authService: AuthService,
     private feedService: FeedService,
     private followService: FollowService,
+    private tweetService: TweetService,
     private router: Router
   ) {
     this.authService.getLoggedInUser().subscribe((user: User) => {
@@ -59,7 +61,13 @@ export class FeedComponent implements OnInit {
     return true;
   }
 
-  goToProfile(user: User) : void {
-    this.router.navigate(['./profile/' + user.id]);
+  goToProfile(user: User|undefined) : void {
+    if (user) {
+      this.router.navigate(['./profile/' + user.id]);
+    }
+  }
+
+  retweet(tweet: Tweet) : void {
+    this.tweetService.createTweet('', tweet.id).subscribe();
   }
 }

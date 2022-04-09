@@ -33,7 +33,7 @@ export class CreateTweetComponent {
       return;
     }
 
-    this.tweetService.createTweet(this.createTweetForm.value.text).subscribe((data: any) => {
+    this.tweetService.createTweet(this.createTweetForm.value.text, null).subscribe((data: any) => {
       this.createTweetForm.reset();
       this.createTweetForm.controls['text'].setErrors(null);
     });

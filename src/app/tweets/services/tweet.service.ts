@@ -5,13 +5,22 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class TweetService {
-
   constructor(
     private http: HttpClient,
   ) { }
 
-  createTweet(text: string): Observable<any> {
-    return this.http.post<any>(environment.apiUrl + '/api/tweets', {text: text});
+  createTweet(text: string|null, retweetId: number|null): Observable<any> {
+    let payload: any = {};
+
+    if (text) {
+      payload.text = text;
+    }
+
+    if (retweetId) {
+      payload.retweeted_id = retweetId;
+    }
+
+    return this.http.post<any>(environment.apiUrl + '/api/tweets', payload);
   }
 
   createTweetClean(text: string): Observable<any> {
