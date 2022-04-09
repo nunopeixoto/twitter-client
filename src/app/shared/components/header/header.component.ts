@@ -21,4 +21,8 @@ export class HeaderComponent {
   goToFollowers() : void {
     this.router.navigate(['./followers']);
   }
+
+  goToHome() : void {
+    this.router.navigate(['./home']);
+  }
 }

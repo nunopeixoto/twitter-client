@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { FeedComponent } from './tweets/components/feed/feed.component';
 import { FollowersComponent } from './tweets/components/followers/followers.component';
 
 const routes: Routes = [
