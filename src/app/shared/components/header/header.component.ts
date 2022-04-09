@@ -38,4 +38,8 @@ export class HeaderComponent {
   goToHome() : void {
     this.router.navigate(['./home']);
   }
+
+  goToFollowingFeed() : void {
+    this.router.navigate(['./following-feed']);
+  }
 }

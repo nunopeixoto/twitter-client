@@ -7,6 +7,7 @@ import { FollowersComponent } from './tweets/components/followers/followers.comp
 import {AuthGuard} from './shared/auth.guard';
 import { AdminAuthGuard } from './shared/admin-auth.guard';
 import { ProfileComponent } from './tweets/components/profile/profile.component';
+import { FollowingFeedComponent } from './tweets/components/following-feed/following-feed.component';
 
 const routes: Routes = [
   {
@@ -26,16 +27,24 @@ const routes: Routes = [
     canActivate: [AdminAuthGuard]
   },
   {
+    path: 'following-feed',
+    component: FollowingFeedComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'followers',
-    component: FollowersComponent
+    component: FollowersComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile/:id',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

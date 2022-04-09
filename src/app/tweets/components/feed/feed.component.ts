@@ -19,7 +19,7 @@ export class FeedComponent implements OnInit {
   tweets: Tweet[] = [];
   constructor(
     private authService: AuthService,
-    private feedService: FeedService,
+    public feedService: FeedService,
     private followService: FollowService,
     private tweetService: TweetService,
     private router: Router

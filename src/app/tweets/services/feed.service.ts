@@ -14,4 +14,8 @@ export class FeedService {
   getFeed(): Observable<Tweet[]> {
     return this.http.get<Tweet[]>(environment.apiUrl + '/api/feed');
   }
+
+  getFollowingFeed(): Observable<Tweet[]> {
+    return this.http.get<Tweet[]>(environment.apiUrl + '/api/feed?onlyFollowing=true');
+  }
 }

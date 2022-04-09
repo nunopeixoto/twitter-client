@@ -2,6 +2,7 @@
   <button (click)="goToHome()" mat-button class="text-lg"> TwitterGems </button>
   <div>
     <button *ngIf="userLoaded && userAuthed.type === 1" (click)="goToFakeTweet()" mat-button> Fake tweet</button>
+    <button (click)="goToFollowingFeed()" mat-button> Following feed</button>
     <button (click)="goToFollowers()" mat-button> Followers</button>
     <button (click)="logout()" mat-button>Logout</button>
   </div>

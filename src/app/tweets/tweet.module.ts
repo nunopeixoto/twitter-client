@@ -13,6 +13,7 @@ import {FollowersService} from './services/followers.service';
 import { FakeTweetComponent } from './components/fake-tweet/fake-tweet.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileService } from './services/profile.service';
+import { FollowingFeedComponent } from './components/following-feed/following-feed.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProfileService } from './services/profile.service';
     FeedComponent,
     FollowersComponent,
     FakeTweetComponent,
-    ProfileComponent
+    ProfileComponent,
+    FollowingFeedComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,37 @@
+<div class="flex items-center flex-col h-screen gap-8 w-full bg-gray-100 pt-20">
+  <div class="w-9/12">
+    <div *ngFor="let tweet of tweets" class="bg-white mb-2">
+      <article class="border-b border-gray py-4 px-4 hover:bg-gray-100">
+        <p class="font-semibold flex items-center">
+            <span class="mr-2">
+              <span class="hover:underline cursor-pointer" (click)="goToProfile(tweet.user)">
+                @{{tweet.user.name}}
+              </span>
+              <span>
+                at {{ tweet.created_at | date:'dd/MM/yyyy' }}
+              </span>
+            </span>
+            <button *ngIf="canFollow(tweet.user)" mat-button color="primary" (click)="follow(tweet.user)">
+              Follow
+            </button>
+
+            <button *ngIf="!canFollow(tweet.user)" mat-button color="primary" (click)="unfollow(tweet.user)">
+              Unfollow
+            </button>
+
+            <button mat-button color="primary" *ngIf="!tweet.retweeted_id" (click)="retweet(tweet)">
+              Retweet
+            </button>
+        </p>
+        <p> {{tweet.text}} </p>
+        <div *ngIf="tweet.retweeted_id">
+          <p>
+            Retweeted from <span class="hover:underline cursor-pointer" (click)="goToProfile(tweet.retweeted_tweet?.user)"> @{{tweet.retweeted_tweet?.user?.name}} </span>
+          </p>
+          {{tweet.retweeted_tweet?.text}}
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
