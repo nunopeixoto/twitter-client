@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import {User} from '../../../tweets/models/user.model';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,18 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class HeaderComponent {
 
+  userAuthed!: User;
+  userLoaded: boolean = false;
+
   constructor(
     private authService: AuthService,
     private router: Router
-  ) { }
+  ) {
+    this.authService.getLoggedInUser().subscribe((user: User) => {
+      this.userAuthed = user;
+      this.userLoaded = true;
+    });
+  }
 
   logout() : void {
     this.authService.logout();

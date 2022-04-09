@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="flex justify-between">
   <button (click)="goToHome()" mat-button class="text-lg"> TwitterGems </button>
   <div>
-    <button (click)="goToFakeTweet()" mat-button> Fake tweet</button>
+    <button *ngIf="userLoaded && userAuthed.type === 1" (click)="goToFakeTweet()" mat-button> Fake tweet</button>
     <button (click)="goToFollowers()" mat-button> Followers</button>
     <button (click)="logout()" mat-button>Logout</button>
   </div>
