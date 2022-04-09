@@ -13,4 +13,8 @@ export class TweetService {
   createTweet(text: string): Observable<any> {
     return this.http.post<any>(environment.apiUrl + '/api/tweets', {text: text});
   }
+
+  createTweetClean(text: string): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + '/api/cleanTweets', {text: text});
+  }
 }

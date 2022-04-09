@@ -9,6 +9,8 @@ import {TweetService} from '../../services/tweet.service';
 })
 export class CreateTweetComponent {
 
+  private cleanTweet: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private tweetService: TweetService
@@ -19,12 +21,27 @@ export class CreateTweetComponent {
   });
 
   createTweet(): void {
-    console.log('create tweet')
-    if (this.createTweetForm.valid) {
-      this.tweetService.createTweet(this.createTweetForm.value.text).subscribe((data: any) => {
+    console.log('create tweet. clean tweet?');
+    console.log(this.cleanTweet)
+    if (!this.createTweetForm.valid) {
+      return;
+    }
+
+    if (this.cleanTweet) {
+      this.tweetService.createTweetClean(this.createTweetForm.value.text).subscribe((data: any) => {
         this.createTweetForm.reset();
         this.createTweetForm.controls['text'].setErrors(null);
       });
+      return;
     }
+
+    this.tweetService.createTweet(this.createTweetForm.value.text).subscribe((data: any) => {
+      this.createTweetForm.reset();
+      this.createTweetForm.controls['text'].setErrors(null);
+    });
+  }
+
+  toggle() : void {
+    this.cleanTweet = !this.cleanTweet;
   }
 }
