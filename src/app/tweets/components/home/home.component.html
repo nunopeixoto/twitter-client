@@ -1,13 +1,10 @@
+<div class="flex items-center flex-col h-screen gap-8 w-full bg-gray-100 pt-20">
+  <div class="w-2/6">
+    <app-create-tweet></app-create-tweet>
+  </div>
 
-<div class="flex items-center flex-col h-screen gap-8 bg-gray-100 pt-20">
-
-  <form [formGroup]="createTweetForm" (ngSubmit)="createTweet()" class="w-6/12">
-    <div class="flex flex-col gap-2 w-full">
-      <mat-form-field appearance="fill">
-        <mat-label> What's up? </mat-label>
-        <textarea  matInput required formControlName="text"></textarea>
-      </mat-form-field>
-    </div>
-    <button mat-flat-button color="primary" type="submit" class="w-80 flex justify-end">Tweet</button>
-  </form>
+  <div class="w-9/12">
+    <app-feed></app-feed>
+  </div>
 </div>
+

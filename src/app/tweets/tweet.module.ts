@@ -4,10 +4,15 @@ import { HomeComponent } from './components/home/home.component';
 import { TweetRoutingModule } from './tweet-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { TweetService } from './services/tweet.service';
+import { CreateTweetComponent } from './components/create-tweet/create-tweet.component';
+import { FeedComponent } from './components/feed/feed.component';
+import {FeedService} from './services/feed.service';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CreateTweetComponent,
+    FeedComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +20,8 @@ import { TweetService } from './services/tweet.service';
     SharedModule
   ],
   providers: [
-    TweetService
+    TweetService,
+    FeedService
   ]
 })
 export class TweetModule { }

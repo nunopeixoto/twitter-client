@@ -1,0 +1,9 @@
+<form [formGroup]="createTweetForm" (ngSubmit)="createTweet()">
+  <div class="flex flex-col gap-2 w-full ">
+    <mat-form-field appearance="fill">
+      <mat-label> What's up? </mat-label>
+      <textarea  matInput required formControlName="text"></textarea>
+    </mat-form-field>
+  </div>
+  <button mat-flat-button color="primary" type="submit" class="w-80 flex justify-end">Tweet</button>
+</form>

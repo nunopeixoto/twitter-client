@@ -4,11 +4,13 @@ import { MaterialModule } from './material/material.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { NgxDatePipe } from './pipes/ngx-date.pipe';
 
 @NgModule({
   declarations: [
     PageNotFoundComponent,
-    HeaderComponent
+    HeaderComponent,
+    NgxDatePipe
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { HeaderComponent } from './components/header/header.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HeaderComponent
+    HeaderComponent,
+    NgxDatePipe
   ]
 })
 export class SharedModule { }
