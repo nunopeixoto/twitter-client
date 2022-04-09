@@ -4,6 +4,8 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 import { FakeTweetComponent } from './tweets/components/fake-tweet/fake-tweet.component';
 import { FeedComponent } from './tweets/components/feed/feed.component';
 import { FollowersComponent } from './tweets/components/followers/followers.component';
+import {AuthGuard} from './shared/auth.guard';
+import { AdminAuthGuard } from './shared/admin-auth.guard';
 
 const routes: Routes = [
   {
@@ -19,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'fake-tweet',
-    component: FakeTweetComponent
+    component: FakeTweetComponent,
+    canActivate: [AdminAuthGuard]
   },
   {
     path: 'followers',
