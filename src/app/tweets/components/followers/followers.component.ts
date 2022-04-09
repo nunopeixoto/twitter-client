@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
 import { FollowersService } from '../../services/followers.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-followers',
@@ -12,7 +13,8 @@ export class FollowersComponent implements OnInit {
   loaded: boolean = false;
   followers: User[] = [];
   constructor(
-    private followersService: FollowersService
+    private followersService: FollowersService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -22,4 +24,7 @@ export class FollowersComponent implements OnInit {
     });
   }
 
+  goToUserProfile(user: User): void {
+    this.router.navigate(['./profile/' + user.id]);
+  }
 }

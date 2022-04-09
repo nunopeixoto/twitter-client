@@ -6,6 +6,7 @@ import { FeedComponent } from './tweets/components/feed/feed.component';
 import { FollowersComponent } from './tweets/components/followers/followers.component';
 import {AuthGuard} from './shared/auth.guard';
 import { AdminAuthGuard } from './shared/admin-auth.guard';
+import { ProfileComponent } from './tweets/components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'followers',
     component: FollowersComponent
+  },
+  {
+    path: 'profile/:id',
+    component: ProfileComponent
   },
   {
     path: '**',

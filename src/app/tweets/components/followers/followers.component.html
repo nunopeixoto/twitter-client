@@ -3,7 +3,7 @@
     <h1> Who is following you? </h1>
     <div *ngFor="let follower of followers" class="mb-2">
       <p class="font-semibold flex items-center">
-        <span class="mr-2">
+        <span class="mr-2 cursor-pointer" (click)="goToUserProfile(follower)">
           @{{follower.name}}
         </span>
       </p>

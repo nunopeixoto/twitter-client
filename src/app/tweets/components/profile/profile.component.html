@@ -1,0 +1,27 @@
+<div class="flex items-center flex-col h-screen gap-8 w-full bg-gray-100 pt-20">
+  <div class="w-2/6" *ngIf="loaded">
+    <h1> @{{ user.name}}'s Profile
+      <button *ngIf="canFollow(user)" mat-button color="primary" (click)="follow(user)">
+        Follow
+      </button>
+      <button *ngIf="!canFollow(user)" mat-button color="primary" (click)="unfollow(user)">
+        Unfollow
+      </button>
+    </h1>
+  </div>
+
+  <div class="w-9/12"  *ngIf="loaded">
+    <div *ngFor="let tweet of user.tweets" class="bg-white mb-2">
+      <article class="border-b border-gray py-4 px-4 hover:bg-gray-100 cursor-pointer">
+        <p class="font-semibold flex items-center">
+            <span class="mr-2">
+              @{{user.name}} at {{ tweet.created_at | date:'dd/MM/yyyy' }}
+            </span>
+        </p>
+        <p> {{tweet.text}} </p>
+      </article>
+    </div>
+
+  </div>
+</div>
+

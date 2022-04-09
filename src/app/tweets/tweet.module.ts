@@ -11,6 +11,8 @@ import { FollowersComponent } from './components/followers/followers.component';
 import {FollowService} from './services/follow.service';
 import {FollowersService} from './services/followers.service';
 import { FakeTweetComponent } from './components/fake-tweet/fake-tweet.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileService } from './services/profile.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FakeTweetComponent } from './components/fake-tweet/fake-tweet.component
     CreateTweetComponent,
     FeedComponent,
     FollowersComponent,
-    FakeTweetComponent
+    FakeTweetComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,8 @@ import { FakeTweetComponent } from './components/fake-tweet/fake-tweet.component
     TweetService,
     FeedService,
     FollowService,
-    FollowersService
+    FollowersService,
+    ProfileService
   ]
 })
 export class TweetModule { }
