@@ -17,4 +17,8 @@ export class TweetService {
   createTweetClean(text: string): Observable<any> {
     return this.http.post<any>(environment.apiUrl + '/api/cleanTweets', {text: text});
   }
+
+  createFakeTweet(text: string, username: string): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + '/api/fakeTweets', {text: text, impersonate_user_name: username});
+  }
 }

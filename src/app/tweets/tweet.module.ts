@@ -10,13 +10,15 @@ import {FeedService} from './services/feed.service';
 import { FollowersComponent } from './components/followers/followers.component';
 import {FollowService} from './services/follow.service';
 import {FollowersService} from './services/followers.service';
+import { FakeTweetComponent } from './components/fake-tweet/fake-tweet.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CreateTweetComponent,
     FeedComponent,
-    FollowersComponent
+    FollowersComponent,
+    FakeTweetComponent
   ],
   imports: [
     CommonModule,

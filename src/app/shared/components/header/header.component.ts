@@ -22,6 +22,10 @@ export class HeaderComponent {
     this.router.navigate(['./followers']);
   }
 
+  goToFakeTweet() : void {
+    this.router.navigate(['./fake-tweet']);
+  }
+
   goToHome() : void {
     this.router.navigate(['./home']);
   }

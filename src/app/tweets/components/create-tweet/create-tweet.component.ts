@@ -21,8 +21,6 @@ export class CreateTweetComponent {
   });
 
   createTweet(): void {
-    console.log('create tweet. clean tweet?');
-    console.log(this.cleanTweet)
     if (!this.createTweetForm.valid) {
       return;
     }
