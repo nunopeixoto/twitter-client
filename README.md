@@ -59,6 +59,6 @@ ___
 - [x] Page that shows the tweets of the people I follow
 - [x] Retweeting of other tweets
 - [x] Admin User fake tweet
-- [x] Clean tweet (third party integration)
+- [x] Clean tweet with notifications / controller refactor and third party integration
 - [x] Support 281 characters per tweet
 - [x] Usernames can't include the number 5
