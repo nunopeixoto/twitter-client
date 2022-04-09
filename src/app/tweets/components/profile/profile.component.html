@@ -19,6 +19,10 @@
             </span>
         </p>
         <p> {{tweet.text}} </p>
+        <div *ngIf="tweet.retweeted_id">
+          <p> Retweeted from @{{tweet.retweeted_tweet?.user?.name}} </p>
+          {{tweet.retweeted_tweet?.text}}
+        </div>
       </article>
     </div>
 
