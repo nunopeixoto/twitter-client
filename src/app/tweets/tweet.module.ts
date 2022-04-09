@@ -7,12 +7,15 @@ import { TweetService } from './services/tweet.service';
 import { CreateTweetComponent } from './components/create-tweet/create-tweet.component';
 import { FeedComponent } from './components/feed/feed.component';
 import {FeedService} from './services/feed.service';
+import { FollowersComponent } from './components/followers/followers.component';
+import {FollowService} from './services/follow.service';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CreateTweetComponent,
-    FeedComponent
+    FeedComponent,
+    FollowersComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,8 @@ import {FeedService} from './services/feed.service';
   ],
   providers: [
     TweetService,
-    FeedService
+    FeedService,
+    FollowService
   ]
 })
 export class TweetModule { }

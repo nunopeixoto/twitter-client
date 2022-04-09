@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { FollowersComponent } from './tweets/components/followers/followers.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('src/app/tweets/tweet.module').then(m => m.TweetModule)
+  },
+  {
+    path: 'followers',
+    component: FollowersComponent
   },
   {
     path: '**',

@@ -10,10 +10,15 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class HeaderComponent {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   logout() : void {
     this.authService.logout();
+  }
+
+  goToFollowers() : void {
+    this.router.navigate(['./followers']);
   }
 }

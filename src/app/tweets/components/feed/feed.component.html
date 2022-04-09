@@ -1,7 +1,16 @@
 <div *ngFor="let tweet of tweets" class="bg-white mb-2">
   <article class="border-b border-gray py-4 px-4 hover:bg-gray-100 cursor-pointer">
     <p class="font-semibold flex items-center">
-        @{{tweet.user.name}} at {{ tweet.created_at | date:'dd/MM/yyyy' }}
+        <span class="mr-2">
+          @{{tweet.user.name}} at {{ tweet.created_at | date:'dd/MM/yyyy' }}
+        </span>
+        <button *ngIf="canFollow(tweet.user)" mat-button color="primary" (click)="follow(tweet.user)">
+          Follow
+        </button>
+
+        <button *ngIf="!canFollow(tweet.user)" mat-button color="primary" (click)="unfollow(tweet.user)">
+          Unfollow
+        </button>
         <!-- <span class="material-icons pl-1">list_alt</span> -->
     </p>
     <p> {{tweet.text}} </p>

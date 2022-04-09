@@ -5,6 +5,7 @@ import { LoginResponseDto } from './dto/response/login-response.dto';
 import { RegisterRequestDto } from './dto/request/register-request.dto';
 import {Router} from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { User } from '../tweets/models/user.model';
 
 @Injectable()
 export class AuthService {
@@ -42,6 +43,10 @@ export class AuthService {
           this.router.navigate(['./auth/login']);
         });
       });
+    }
+
+    getLoggedInUser(): Observable<User> {
+      return this.http.get<User>(environment.apiUrl + '/api/user');
     }
 
     getCsrfCookie() : Observable<any> {
