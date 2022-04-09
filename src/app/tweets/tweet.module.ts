@@ -9,6 +9,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import {FeedService} from './services/feed.service';
 import { FollowersComponent } from './components/followers/followers.component';
 import {FollowService} from './services/follow.service';
+import {FollowersService} from './services/followers.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {FollowService} from './services/follow.service';
   providers: [
     TweetService,
     FeedService,
-    FollowService
+    FollowService,
+    FollowersService
   ]
 })
 export class TweetModule { }

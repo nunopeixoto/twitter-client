@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/user.model';
+import { FollowersService } from '../../services/followers.service';
 
 @Component({
   selector: 'app-followers',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FollowersComponent implements OnInit {
 
-  constructor() { }
+  loaded: boolean = false;
+  followers: User[] = [];
+  constructor(
+    private followersService: FollowersService
+  ) { }
 
   ngOnInit(): void {
+    this.followersService.getFollowers().subscribe((data: User[]) => {
+      this.loaded = true;
+      this.followers = data;
+    });
   }
 
 }

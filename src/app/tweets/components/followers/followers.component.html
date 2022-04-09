@@ -1,1 +1,21 @@
-<p>followers works!</p>
+<div class="flex items-center flex-col h-screen gap-8 w-full bg-gray-100 pt-20">
+  <div class="w-4/12">
+    <h1> Who is following you? </h1>
+    <div *ngFor="let follower of followers" class="mb-2">
+      <p class="font-semibold flex items-center">
+        <span class="mr-2">
+          @{{follower.name}}
+        </span>
+      </p>
+    </div>
+
+  </div>
+  <span *ngIf="loaded && followers.length === 0" class="flex items-center">
+    No one is following you 😔
+  </span>
+</div>
+
+
+
+
+
