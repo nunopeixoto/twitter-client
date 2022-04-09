@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('src/app/content/content.module').then(m => m.ContentModule)
+    loadChildren: () => import('src/app/tweets/tweet.module').then(m => m.TweetModule)
   },
   {
     path: '**',

@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ContentModule } from './content/content.module';
+import { TweetModule } from './tweets/tweet.module';
 import { AuthService } from './auth/auth.service';
 import { HttpApiInterceptor } from './http-api.interceptor';
 
@@ -22,7 +22,7 @@ import { HttpApiInterceptor } from './http-api.interceptor';
     AppRoutingModule,
     SharedModule,
     AuthModule,
-    ContentModule
+    TweetModule
   ],
   providers: [
     AuthService,
