@@ -5,6 +5,7 @@ import { UserFollower } from '../../models/user-followermodel';
 import { User } from '../../models/user.model';
 import {FeedService} from '../../services/feed.service';
 import {FollowService} from '../../services/follow.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -18,7 +19,8 @@ export class FeedComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private feedService: FeedService,
-    private followService: FollowService
+    private followService: FollowService,
+    private router: Router
   ) {
     this.authService.getLoggedInUser().subscribe((user: User) => {
       this.userAuthed = user;
@@ -55,5 +57,9 @@ export class FeedComponent implements OnInit {
       }
     }
     return true;
+  }
+
+  goToProfile(user: User) : void {
+    this.router.navigate(['./profile/' + user.id]);
   }
 }
