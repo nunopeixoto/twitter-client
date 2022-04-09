@@ -42,7 +42,7 @@ ___
 
 ## General notes about the assignment
 - Given the time constraints, I only wrote tests for some Features.
-- Since the client-side was not considered important for this challenge, I didn't make a priority out of things like testing, pagination, error handling, redirecting, etc. I simply tried to do the minimal necessary to request the features of the API.
+- Since the client-side was not considered important for this challenge, I didn't make a priority out of things like testing, best-practices, pagination, error handling, etc. I simply tried to do the minimal necessary to request the features of the API as fast as possible.
 - For testing purposes, I add the "Clean tweet config" toggle that will allow you to test the "clean tweet" feature.
 - There is no way of turning a user into an admin. To achieve this purpose and test the "fake tweet feature", just switch the user's `type` from `NULL` to `1`.
 
